@@ -3,20 +3,20 @@ let pattern = []
 let n  = 40;
 let cnv;
 function setup() {
-    cnv = createCanvas(800,800);
+    cnv = createCanvas(windowHeight/2,windowHeight/2);
     ellipseMode(CORNER)
 }
 
 function draw() {
     noStroke();
     background('#bae8e8');
-    step_x = 20;
-    step_y = 20;
+    step_x = 0.5*windowHeight/n;
+    step_y = 0.5*windowHeight/n;
     let x_index = 0;
 
     let y_index = 0;
-    for(let x =0; x< width; x+= step_x){
-        for(let y=0; y< height; y+= step_y){
+    for(let x =0; x< 0.49*windowHeight; x+= step_x){
+        for(let y=0; y< 0.49*windowHeight; y+= step_y){
             drawSquare(x,y,step_x, x_index, y_index);
             y_index++;
         }
@@ -26,6 +26,9 @@ function draw() {
 }
 
 function drawSquare(x,y,width,x_index, y_index){
+    // console.log(pattern)
+    // console.log(x_index)
+    // console.log(y_index)
     fill(pattern[x_index][y_index])
     square(x,y,width);
 }
@@ -44,7 +47,9 @@ for(let i=0; i<n; i++){
 function randomizePattern(){
     for(let i=0; i<n;i++){
         pattern[i] = [0,0,0,0,0,0,0,0]
-    }
+    }    // console.log(pattern)
+    // console.log(x_index)
+    // console.log(y_index)
     for(let i=0; i<n; i++){
         for(let j=0; j<n; j++){
             pattern[i][j] = '#bae8e8';
