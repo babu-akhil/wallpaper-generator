@@ -3,20 +3,20 @@ let pattern = []
 let n  = 40;
 let cnv;
 function setup() {
-    cnv = createCanvas(windowHeight/2,windowHeight/2);
+    cnv = createCanvas(3*windowHeight/10,3*windowHeight/10);
     ellipseMode(CORNER)
 }
 
 function draw() {
     noStroke();
     background('#bae8e8');
-    step_x = 0.5*windowHeight/n;
-    step_y = 0.5*windowHeight/n;
+    step_x = 0.3*windowHeight/n;
+    step_y = 0.3*windowHeight/n;
     let x_index = 0;
 
     let y_index = 0;
-    for(let x =0; x< 0.49*windowHeight; x+= step_x){
-        for(let y=0; y< 0.49*windowHeight; y+= step_y){
+    for(let x =0; x< 0.2999*windowHeight; x+= step_x){
+        for(let y=0; y< 0.2999*windowHeight; y+= step_y){
             drawSquare(x,y,step_x, x_index, y_index);
             y_index++;
         }
@@ -84,7 +84,8 @@ function randomizePattern(){
         }
     }
     setTimeout(() => {document.body.style.background = "url(" + cnv.canvas.toDataURL() + ")";
-                    document.body.style.backgroundPosition = 'center'},
+                    document.body.style.backgroundPosition = 'center'
+                },
     1000)
 }
 
@@ -103,5 +104,6 @@ generateBtn.addEventListener('click', randomizePattern)
 randomizePattern();
 
 setTimeout(() => {document.body.style.background = "url(" + cnv.canvas.toDataURL() + ")";
-                    document.body.style.backgroundPosition = 'center'},
+                    document.body.style.backgroundPosition = 'center'
+                },
 1000)

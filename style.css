@@ -1,14 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100&family=Zen+Loop&display=swap');
 body {
     font-family: 'Roboto Mono';
-    background-color: #2c698d;
+    background-color: #bae8e8;
     background-position: center;
+    width: 100vw;
+    height:100vh;
 }
 h1 {
     text-align: center;
     font-size: 50px;
     margin: 10px 0px 10px;
     color: #2c698d;
+    background-color: #bae8e8;
 }
 canvas {
     display: block;
@@ -38,7 +41,7 @@ button:hover{
     width: 200px;
     margin-left: auto;
     margin-right: auto;
-
+    background-color: #bae8e8;
 }
 
 #defaultCanvas0 {
